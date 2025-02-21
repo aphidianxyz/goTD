@@ -1,23 +1,13 @@
 package main
 
 import (
-	"image/color"
-
-	"github.com/gen2brain/raylib-go/raylib"
+    screen "github.com/aphidianxyz/goTD/engine/screen"
+    rlw "github.com/aphidianxyz/goTD/engine/raylibwrapper"
 )
 
 func main() {
-	rl.InitWindow(800, 450, "raylib [core] example - basic window")
-	defer rl.CloseWindow()
-
-	rl.SetTargetFPS(60)
-
-	for !rl.WindowShouldClose() {
-		rl.BeginDrawing()
-
-		rl.ClearBackground(color.RGBA{1, 50, 32, 1})
-		rl.DrawText("Congrats! You created your first window!", 190, 200, 20, rl.LightGray)
-
-		rl.EndDrawing()
-	}
+    rlw := &rlw.RealRaylibWrapper{}
+    screen := screen.Screen{Width: 100, Height: 100, Title: "game"}
+    screen.Init(rlw)
 }
+

@@ -1,4 +1,4 @@
-module github.com/aphidianxyz/gotd
+module github.com/aphidianxyz/goTD
 
 go 1.24.0
 
